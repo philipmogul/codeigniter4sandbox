@@ -9,6 +9,6 @@ class User extends Model
     // Modify by adding table name, primary key and allowed fields
     protected $table = "users";
     protected $primaryKey = "id";
-    protected $returnType = "";
+    protected $returnType = "array"; // So it may return an array and not an object
     protected $allowedFields = ['username', 'email', 'password_hash', 'picture', 'bio'];
 }

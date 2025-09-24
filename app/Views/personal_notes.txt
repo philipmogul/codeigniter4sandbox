@@ -1,0 +1,30 @@
+# This are my personal notes to help me master codeigniter 
+
+# Making Auth Controller & AdminController to control authorizations of logins 
+
+php spark make:controller AuthController 
+# New File in Controllers/AuthController.php 
+
+
+php spark make:controller AdminController 
+# New File in Controllers/AdminController.php 
+
+
+# In Librabries Folder, I created 2 Files: Hash.php + CIAuth.php
+# Hash will help create a hash password and compare to password received by user to what is in database 
+# CIAuth helps store verified admin credentials in sessions 
+
+
+# Removing visibility of pages eg index.php 
+# Create a .htacess file and paste the following 
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+
+# The Go app/Config/App.php and remove index.php from public string $indexPage
+
+
+
