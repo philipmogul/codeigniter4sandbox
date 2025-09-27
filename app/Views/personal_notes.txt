@@ -27,4 +27,15 @@ php spark make:controller AdminController
 # The Go app/Config/App.php and remove index.php from public string $indexPage
 
 
+# Filters help protect routes eg when logged out you cant see home page and when logged in 
+you cant go back to index page 
+# Create terminal in filter 
+: php spark make:filter CIFilter 
+# It wiil be created in the filters folder 
+# paste authorizations code 
+# Open app/Config/Filters.php = reg CIFilters as ALias 
+# Open routes.php = apply filters on route groups 
+
+
+
 
