@@ -39,3 +39,31 @@ you cant go back to index page
 
 
 
+# Sending Emails with php 
+1. Downloaded PhpMailer 
+2. Created a mailtrap.io account
+3. Went to mailtrap.io and selected configuration for php > phpmailer ( But there are a lot 
+of platforms eg codeigniter , laravel etc )
+4. Opened .env file and added new email variables 
+5. Added a helper file for send email function 
+6. Pasted in the helper file from phpmailer github page 
+7. Create migrations file for password reset tokens : 
+	php spark make:migration password_reset_tokens_table 
+	// Add columns to it in up() and down() methods 
+
+
+8. Create password reset token model 
+	php spark make:model PasswordResetToken 
+	// Modify model 
+	// Run : php spark migrate 
+	// The command with create the db and relevant column names 
+
+9. Install php nesbot carbon : composer require nesbot/carbon
+
+10. In AuthController: Add PasswordResetToken Model + Carbon 
+11. Include CIMail in helpers 
+12. 
+
+
+
+
