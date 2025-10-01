@@ -5,6 +5,8 @@
 		<!-- Basic Page Info -->
 		<meta charset="utf-8" />
 		<title><?= isset($pageTitle) ? $pageTitle: 'New Page Title' ?></title>
+		<!-- Toastr CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 		<!-- Site favicon -->
 		<link
@@ -90,6 +92,14 @@
 		<script src="/backend/vendors/scripts/script.min.js"></script>
 		<script src="/backend/vendors/scripts/process.js"></script>
 		<script src="/backend/vendors/scripts/layout-settings.js"></script>
+		<script src="/extra-assets/jscssassets/jquery-3.7.1.min.js"></script>
+
+<!-- jQuery (required for toastr) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 		<?= $this->renderSection('scripts') ?>
 	</body>
 </html>

@@ -164,21 +164,18 @@
 							data-toggle="dropdown"
 						>
 							<span class="user-icon">
-								<img src="/backend/vendors/images/photo1.jpg" alt="" />
+								<img src="<?= get_user()->picture == null ? '/images/users/ls.jpg' : '/images/users/'.get_user()->picture(); ?>" alt="" class="ci-avatar-photo" />
 							</span>
-							<span class="user-name">Ross C. Lopez</span>
+							<span class="user-name ci-user-name"><?= get_user()->username; ?></span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
 						>
-							<a class="dropdown-item" href="profile.html"
+							<a class="dropdown-item" href="<?= route_to('admin.profile'); ?>"
 								><i class="dw dw-user1"></i> Profile</a
 							>
-							<a class="dropdown-item" href="profile.html"
-								><i class="dw dw-settings2"></i> Setting</a
-							>
-							<a class="dropdown-item" href="faq.html"
-								><i class="dw dw-help"></i> Help</a
+							<a class="dropdown-item" href="<?= route_to(''); ?>"
+								><i class="dw dw-settings2"></i> Settings</a
 							>
 							<a class="dropdown-item" href="<?= route_to('admin.logout') ?>"
 								><i class="dw dw-logout"></i> Log Out</a
