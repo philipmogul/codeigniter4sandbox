@@ -10,7 +10,7 @@ if( ! function_exists("get_user") )
     {
         if( CIAuth::check() )
         {
-            return new User();
+            $user = new User();
             return $user->asObject()->where('id', CIAuth::id())->first();
         }
         else

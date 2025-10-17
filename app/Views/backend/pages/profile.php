@@ -113,6 +113,62 @@
 
 <?= $this->endSection() ?>
 <?= $this->section('scripts') ?>
+<script>
+$('#personal_details_from').on('submit',function(e)
+{
+    e.preventDefault();
+    let form = this;
+    var formData = new FormData(form);
 
+    $.ajax(
+        {
+            url: $(form).attr('action'),
+            method: $(form).attr('method'),
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            beforeSend: function()
+            {
+                // $(form).find('span.error-text').text('');
+                // $('#update_profile_btn').prop('disabled', true);
+                // $('#update_profile_btn').html('Updating...');
+                toastr.remove();
+                $(form).find('span.error-text').text('');
+            },
+            success: function(response)
+            {
+                if( $.isEmptyObject(response.error) )
+                {
+                    if (response.status == 1) {
+                        if (response.user_info && response.user_info.name) {
+                            $('.ci-user-name').html(response.user_info.name);
+                        }
+                        toastr.success(response.msg);
+                    } else if (response.error) {
+                        // Display validation errors
+                        for (const key in response.error) {
+                            toastr.error(response.error[key]);
+                        }
+                    } else {
+                        toastr.error(response.msg);
+                    }
+                }
+                else
+                {
+                    $.each(response.error, function(prefix, val){
+                        $(form).find('span.'+prefix+'_error').text(val);
+                    });
+                }
+            },
+            complete: function()
+            {
+                $('#update_profile_btn').prop('disabled', false);
+                $('#update_profile_btn').html('Update Profile');
+            }
+        }
+    );
 
+});
+</script>
 <?= $this->endSection(); ?>

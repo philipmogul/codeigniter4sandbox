@@ -27,7 +27,8 @@ class CIAuth
                 
                 // Once logged in, fetch the user from database
                 $user = new User();
-                return $user->asObject()->where('id', CIAuth::id())->first();
+                $userdata = $session->get('userdata');
+                return $userdata['id'];
                 // Create another helper file in Helpers : Helper/CIFunctions_helper.php 
                 // Make sure to load helpers in both admin + auth controllers 
                 // protected $helpers = ['form', 'url','CIMail', 'CIFunctions_helper'];

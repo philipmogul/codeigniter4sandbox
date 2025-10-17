@@ -10,5 +10,5 @@ class User extends Model
     protected $table = "users";
     protected $primaryKey = "id";
     protected $returnType = "array"; // So it may return an array and not an object
-    protected $allowedFields = ['username', 'email', 'password_hash', 'picture', 'bio'];
+    protected $allowedFields = ['name','username', 'email', 'password_hash', 'picture', 'bio'];
 }
