@@ -7,6 +7,9 @@
 		<title><?= isset($pageTitle) ? $pageTitle: 'New Page Title' ?></title>
 		<!-- Toastr CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+		
 
 		<!-- Site favicon -->
 		<link
@@ -59,7 +62,7 @@
 					<div class="bar" id="bar1"></div>
 				</div>
 				<div class="percent" id="percent1">0%</div>
-				<div class="loading-text">Loading...</div>
+				<div class="loading-text">LOADING CODEIGNITER4 APP ...</div>
 			</div>
 		</div>
 
@@ -88,17 +91,16 @@
         
 
 		<!-- js -->
+		
+		<script src="/extra-assets/jscssassets/jquery-3.7.1.min.js"></script>
 		<script src="/backend/vendors/scripts/core.js"></script>
 		<script src="/backend/vendors/scripts/script.min.js"></script>
 		<script src="/backend/vendors/scripts/process.js"></script>
 		<script src="/backend/vendors/scripts/layout-settings.js"></script>
-		<script src="/extra-assets/jscssassets/jquery-3.7.1.min.js"></script>
-
-<!-- jQuery (required for toastr) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Toastr JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+		<!-- Toastr JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 		<?= $this->renderSection('scripts') ?>
 	</body>

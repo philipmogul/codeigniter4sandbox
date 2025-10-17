@@ -43,49 +43,8 @@ class AdminController extends BaseController
     $validation = \Config\Services::validation();
     $user_id    = CIAuth::id();
     
-    if ($request->isAJAX()) {
-        $rules = [
-            'name' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Name is required'
-                ]
-            ],
-            'username' => [
-                'rules' => 'required|min_length[4]|is_unique[users.username,id,{id}]',
-                'errors' => [
-                    'required'   => 'Username is required',
-                    'min_length' => 'Username must be at least 4 characters',
-                    'is_unique'  => 'Username already exists',
-                ]
-            ],
-            'bio' => [
-                'rules' => 'permit_empty|max_length[250]',
-                'errors' => [
-                    'max_length' => 'Bio must not exceed 250 characters'
-                ]
-            ]
-        ];
 
-        if (!$this->validate($rules)) {
-            return $this->response->setJSON([
-                'status' => 0,
-                'msg'    => 'Please correct the highlighted errors.',
-                'error'  => $validation->getErrors()
-            ]);
-        }
-
-        // ✅ Success response
-        return $this->response->setJSON([
-            'status' => 1,
-            'msg'    => 'Profile updated successfully!',
-            'user_info' => [
-                'name' => $request->getPost('name')
-            ]
-        ]);
-    }
 }
-
 
 
 }
